@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_card_section
+    - paragraphs.paragraphs_type.bp_card
+    - paragraphs.paragraphs_type.bp_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.bp_cards.bp_card_section
+field_name: bp_card_section
+entity_type: paragraph
+bundle: bp_cards
+label: 'Card Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      bp_card: bp_card
+    target_bundles_drag_drop:
+      bp_accordion:
+        weight: 19
+        enabled: false
+      bp_accordion_section:
+        weight: 20
+        enabled: false
+      bp_blank:
+        weight: 21
+        enabled: false
+      bp_block:
+        weight: 22
+        enabled: false
+      bp_card:
+        enabled: true
+        weight: 23
+      bp_cards:
+        weight: 24
+        enabled: false
+      bp_carousel:
+        weight: 25
+        enabled: false
+      bp_columns:
+        weight: 26
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 27
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 28
+        enabled: false
+      bp_column_wrapper:
+        weight: 29
+        enabled: false
+      bp_contact:
+        weight: 30
+        enabled: false
+      bp_image:
+        weight: 31
+        enabled: false
+      bp_modal:
+        weight: 32
+        enabled: false
+      bp_simple:
+        weight: 33
+        enabled: false
+      bp_tabs:
+        weight: 34
+        enabled: false
+      bp_tab_section:
+        weight: 35
+        enabled: false
+      bp_view:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

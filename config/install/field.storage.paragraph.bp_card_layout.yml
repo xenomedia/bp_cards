@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.bp_card_layout
+field_name: bp_card_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: card-group
+      label: 'Card Group'
+    -
+      value: card-deck
+      label: 'Card Deck'
+    -
+      value: card-columns
+      label: 'Card Columns'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,7 @@
+name: Bootstrap Paragraphs Cards
+type: module
+description: A pair of Card Paragraph bundles made for Boostrap Paragraphs.
+core: 8.x
+package: Paragraphs
+dependencies:
+  - bootstrap_paragraphs

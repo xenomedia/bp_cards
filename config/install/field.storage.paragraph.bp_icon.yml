@@ -1,0 +1,797 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.bp_icon
+field_name: bp_icon
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: glyphicon-asterisk
+      label: asterisk
+    -
+      value: glyphicon-plus
+      label: plus
+    -
+      value: glyphicon-minus
+      label: minus
+    -
+      value: glyphicon-eur
+      label: eur
+    -
+      value: glyphicon-euro
+      label: euro
+    -
+      value: glyphicon-cloud
+      label: cloud
+    -
+      value: glyphicon-envelope
+      label: envelope
+    -
+      value: glyphicon-pencil
+      label: pencil
+    -
+      value: glyphicon-glass
+      label: glass
+    -
+      value: glyphicon-music
+      label: music
+    -
+      value: glyphicon-search
+      label: search
+    -
+      value: glyphicon-heart
+      label: heart
+    -
+      value: glyphicon-star
+      label: star
+    -
+      value: glyphicon-star-empty
+      label: star-empty
+    -
+      value: glyphicon-user
+      label: user
+    -
+      value: glyphicon-film
+      label: film
+    -
+      value: glyphicon-th-large
+      label: th-large
+    -
+      value: glyphicon-th
+      label: th
+    -
+      value: glyphicon-th-list
+      label: th-list
+    -
+      value: glyphicon-ok
+      label: ok
+    -
+      value: glyphicon-remove
+      label: remove
+    -
+      value: glyphicon-zoom-in
+      label: zoom-in
+    -
+      value: glyphicon-zoom-out
+      label: zoom-out
+    -
+      value: glyphicon-off
+      label: 'off'
+    -
+      value: glyphicon-signal
+      label: signal
+    -
+      value: glyphicon-cog
+      label: cog
+    -
+      value: glyphicon-trash
+      label: trash
+    -
+      value: glyphicon-home
+      label: home
+    -
+      value: glyphicon-file
+      label: file
+    -
+      value: glyphicon-time
+      label: time
+    -
+      value: glyphicon-road
+      label: road
+    -
+      value: glyphicon-download-alt
+      label: download-alt
+    -
+      value: glyphicon-download
+      label: download
+    -
+      value: glyphicon-upload
+      label: upload
+    -
+      value: glyphicon-inbox
+      label: inbox
+    -
+      value: glyphicon-play-circle
+      label: play-circle
+    -
+      value: glyphicon-repeat
+      label: repeat
+    -
+      value: glyphicon-refresh
+      label: refresh
+    -
+      value: glyphicon-list-alt
+      label: list-alt
+    -
+      value: glyphicon-lock
+      label: lock
+    -
+      value: glyphicon-flag
+      label: flag
+    -
+      value: glyphicon-headphones
+      label: headphones
+    -
+      value: glyphicon-volume-off
+      label: volume-off
+    -
+      value: glyphicon-volume-down
+      label: volume-down
+    -
+      value: glyphicon-volume-up
+      label: volume-up
+    -
+      value: glyphicon-qrcode
+      label: qrcode
+    -
+      value: glyphicon-barcode
+      label: barcode
+    -
+      value: glyphicon-tag
+      label: tag
+    -
+      value: glyphicon-tags
+      label: tags
+    -
+      value: glyphicon-book
+      label: book
+    -
+      value: glyphicon-bookmark
+      label: bookmark
+    -
+      value: glyphicon-print
+      label: print
+    -
+      value: glyphicon-camera
+      label: camera
+    -
+      value: glyphicon-font
+      label: font
+    -
+      value: glyphicon-bold
+      label: bold
+    -
+      value: glyphicon-italic
+      label: italic
+    -
+      value: glyphicon-text-height
+      label: text-height
+    -
+      value: glyphicon-text-width
+      label: text-width
+    -
+      value: glyphicon-align-left
+      label: align-left
+    -
+      value: glyphicon-align-center
+      label: align-center
+    -
+      value: glyphicon-align-right
+      label: align-right
+    -
+      value: glyphicon-align-justify
+      label: align-justify
+    -
+      value: glyphicon-list
+      label: list
+    -
+      value: glyphicon-indent-left
+      label: indent-left
+    -
+      value: glyphicon-indent-right
+      label: indent-right
+    -
+      value: glyphicon-facetime-video
+      label: facetime-video
+    -
+      value: glyphicon-picture
+      label: picture
+    -
+      value: glyphicon-map-marker
+      label: map-marker
+    -
+      value: glyphicon-adjust
+      label: adjust
+    -
+      value: glyphicon-tint
+      label: tint
+    -
+      value: glyphicon-edit
+      label: edit
+    -
+      value: glyphicon-share
+      label: share
+    -
+      value: glyphicon-check
+      label: check
+    -
+      value: glyphicon-move
+      label: move
+    -
+      value: glyphicon-step-backward
+      label: step-backward
+    -
+      value: glyphicon-fast-backward
+      label: fast-backward
+    -
+      value: glyphicon-backward
+      label: backward
+    -
+      value: glyphicon-play
+      label: play
+    -
+      value: glyphicon-pause
+      label: pause
+    -
+      value: glyphicon-stop
+      label: stop
+    -
+      value: glyphicon-forward
+      label: forward
+    -
+      value: glyphicon-fast-forward
+      label: fast-forward
+    -
+      value: glyphicon-step-forward
+      label: step-forward
+    -
+      value: glyphicon-eject
+      label: eject
+    -
+      value: glyphicon-chevron-left
+      label: chevron-left
+    -
+      value: glyphicon-chevron-right
+      label: chevron-right
+    -
+      value: glyphicon-plus-sign
+      label: plus-sign
+    -
+      value: glyphicon-minus-sign
+      label: minus-sign
+    -
+      value: glyphicon-remove-sign
+      label: remove-sign
+    -
+      value: glyphicon-ok-sign
+      label: ok-sign
+    -
+      value: glyphicon-question-sign
+      label: question-sign
+    -
+      value: glyphicon-info-sign
+      label: info-sign
+    -
+      value: glyphicon-screenshot
+      label: screenshot
+    -
+      value: glyphicon-remove-circle
+      label: remove-circle
+    -
+      value: glyphicon-ok-circle
+      label: ok-circle
+    -
+      value: glyphicon-ban-circle
+      label: ban-circle
+    -
+      value: glyphicon-arrow-left
+      label: arrow-left
+    -
+      value: glyphicon-arrow-right
+      label: arrow-right
+    -
+      value: glyphicon-arrow-up
+      label: arrow-up
+    -
+      value: glyphicon-arrow-down
+      label: arrow-down
+    -
+      value: glyphicon-share-alt
+      label: share-alt
+    -
+      value: glyphicon-resize-full
+      label: resize-full
+    -
+      value: glyphicon-resize-small
+      label: resize-small
+    -
+      value: glyphicon-exclamation-sign
+      label: exclamation-sign
+    -
+      value: glyphicon-gift
+      label: gift
+    -
+      value: glyphicon-leaf
+      label: leaf
+    -
+      value: glyphicon-fire
+      label: fire
+    -
+      value: glyphicon-eye-open
+      label: eye-open
+    -
+      value: glyphicon-eye-close
+      label: eye-close
+    -
+      value: glyphicon-warning-sign
+      label: warning-sign
+    -
+      value: glyphicon-plane
+      label: plane
+    -
+      value: glyphicon-calendar
+      label: calendar
+    -
+      value: glyphicon-random
+      label: random
+    -
+      value: glyphicon-comment
+      label: comment
+    -
+      value: glyphicon-magnet
+      label: magnet
+    -
+      value: glyphicon-chevron-up
+      label: chevron-up
+    -
+      value: glyphicon-chevron-down
+      label: chevron-down
+    -
+      value: glyphicon-retweet
+      label: retweet
+    -
+      value: glyphicon-shopping-cart
+      label: shopping-cart
+    -
+      value: glyphicon-folder-close
+      label: folder-close
+    -
+      value: glyphicon-folder-open
+      label: folder-open
+    -
+      value: glyphicon-resize-vertical
+      label: resize-vertical
+    -
+      value: glyphicon-resize-horizontal
+      label: resize-horizontal
+    -
+      value: glyphicon-hdd
+      label: hdd
+    -
+      value: glyphicon-bullhorn
+      label: bullhorn
+    -
+      value: glyphicon-bell
+      label: bell
+    -
+      value: glyphicon-certificate
+      label: certificate
+    -
+      value: glyphicon-thumbs-up
+      label: thumbs-up
+    -
+      value: glyphicon-thumbs-down
+      label: thumbs-down
+    -
+      value: glyphicon-hand-right
+      label: hand-right
+    -
+      value: glyphicon-hand-left
+      label: hand-left
+    -
+      value: glyphicon-hand-up
+      label: hand-up
+    -
+      value: glyphicon-hand-down
+      label: hand-down
+    -
+      value: glyphicon-circle-arrow-right
+      label: circle-arrow-right
+    -
+      value: glyphicon-circle-arrow-left
+      label: circle-arrow-left
+    -
+      value: glyphicon-circle-arrow-up
+      label: circle-arrow-up
+    -
+      value: glyphicon-circle-arrow-down
+      label: circle-arrow-down
+    -
+      value: glyphicon-globe
+      label: globe
+    -
+      value: glyphicon-wrench
+      label: wrench
+    -
+      value: glyphicon-tasks
+      label: tasks
+    -
+      value: glyphicon-filter
+      label: filter
+    -
+      value: glyphicon-briefcase
+      label: briefcase
+    -
+      value: glyphicon-fullscreen
+      label: fullscreen
+    -
+      value: glyphicon-dashboard
+      label: dashboard
+    -
+      value: glyphicon-paperclip
+      label: paperclip
+    -
+      value: glyphicon-heart-empty
+      label: heart-empty
+    -
+      value: glyphicon-link
+      label: link
+    -
+      value: glyphicon-phone
+      label: phone
+    -
+      value: glyphicon-pushpin
+      label: pushpin
+    -
+      value: glyphicon-usd
+      label: usd
+    -
+      value: glyphicon-gbp
+      label: gbp
+    -
+      value: glyphicon-sort
+      label: sort
+    -
+      value: glyphicon-sort-by-alphabet
+      label: sort-by-alphabet
+    -
+      value: glyphicon-sort-by-alphabet-alt
+      label: sort-by-alphabet-alt
+    -
+      value: glyphicon-sort-by-order
+      label: sort-by-order
+    -
+      value: glyphicon-sort-by-order-alt
+      label: sort-by-order-alt
+    -
+      value: glyphicon-sort-by-attributes
+      label: sort-by-attributes
+    -
+      value: glyphicon-sort-by-attributes-alt
+      label: sort-by-attributes-alt
+    -
+      value: glyphicon-unchecked
+      label: unchecked
+    -
+      value: glyphicon-expand
+      label: expand
+    -
+      value: glyphicon-collapse-down
+      label: collapse-down
+    -
+      value: glyphicon-collapse-up
+      label: collapse-up
+    -
+      value: glyphicon-log-in
+      label: log-in
+    -
+      value: glyphicon-flash
+      label: flash
+    -
+      value: glyphicon-log-out
+      label: log-out
+    -
+      value: glyphicon-new-window
+      label: new-window
+    -
+      value: glyphicon-record
+      label: record
+    -
+      value: glyphicon-save
+      label: save
+    -
+      value: glyphicon-open
+      label: open
+    -
+      value: glyphicon-saved
+      label: saved
+    -
+      value: glyphicon-import
+      label: import
+    -
+      value: glyphicon-export
+      label: export
+    -
+      value: glyphicon-send
+      label: send
+    -
+      value: glyphicon-floppy-disk
+      label: floppy-disk
+    -
+      value: glyphicon-floppy-saved
+      label: floppy-saved
+    -
+      value: glyphicon-floppy-remove
+      label: floppy-remove
+    -
+      value: glyphicon-floppy-save
+      label: floppy-save
+    -
+      value: glyphicon-floppy-open
+      label: floppy-open
+    -
+      value: glyphicon-credit-card
+      label: credit-card
+    -
+      value: glyphicon-transfer
+      label: transfer
+    -
+      value: glyphicon-cutlery
+      label: cutlery
+    -
+      value: glyphicon-header
+      label: header
+    -
+      value: glyphicon-compressed
+      label: compressed
+    -
+      value: glyphicon-earphone
+      label: earphone
+    -
+      value: glyphicon-phone-alt
+      label: phone-alt
+    -
+      value: glyphicon-tower
+      label: tower
+    -
+      value: glyphicon-stats
+      label: stats
+    -
+      value: glyphicon-sd-video
+      label: sd-video
+    -
+      value: glyphicon-hd-video
+      label: hd-video
+    -
+      value: glyphicon-subtitles
+      label: subtitles
+    -
+      value: glyphicon-sound-stereo
+      label: sound-stereo
+    -
+      value: glyphicon-sound-dolby
+      label: sound-dolby
+    -
+      value: glyphicon-sound-5-1
+      label: sound-5-1
+    -
+      value: glyphicon-sound-6-1
+      label: sound-6-1
+    -
+      value: glyphicon-sound-7-1
+      label: sound-7-1
+    -
+      value: glyphicon-copyright-mark
+      label: copyright-mark
+    -
+      value: glyphicon-registration-mark
+      label: registration-mark
+    -
+      value: glyphicon-cloud-download
+      label: cloud-download
+    -
+      value: glyphicon-cloud-upload
+      label: cloud-upload
+    -
+      value: glyphicon-tree-conifer
+      label: tree-conifer
+    -
+      value: glyphicon-tree-deciduous
+      label: tree-deciduous
+    -
+      value: glyphicon-cd
+      label: cd
+    -
+      value: glyphicon-save-file
+      label: save-file
+    -
+      value: glyphicon-open-file
+      label: open-file
+    -
+      value: glyphicon-level-up
+      label: level-up
+    -
+      value: glyphicon-copy
+      label: copy
+    -
+      value: glyphicon-paste
+      label: paste
+    -
+      value: glyphicon-alert
+      label: alert
+    -
+      value: glyphicon-equalizer
+      label: equalizer
+    -
+      value: glyphicon-king
+      label: king
+    -
+      value: glyphicon-queen
+      label: queen
+    -
+      value: glyphicon-pawn
+      label: pawn
+    -
+      value: glyphicon-bishop
+      label: bishop
+    -
+      value: glyphicon-knight
+      label: knight
+    -
+      value: glyphicon-baby-formula
+      label: baby-formula
+    -
+      value: glyphicon-tent
+      label: tent
+    -
+      value: glyphicon-blackboard
+      label: blackboard
+    -
+      value: glyphicon-bed
+      label: bed
+    -
+      value: glyphicon-apple
+      label: apple
+    -
+      value: glyphicon-erase
+      label: erase
+    -
+      value: glyphicon-hourglass
+      label: hourglass
+    -
+      value: glyphicon-lamp
+      label: lamp
+    -
+      value: glyphicon-duplicate
+      label: duplicate
+    -
+      value: glyphicon-piggy-bank
+      label: piggy-bank
+    -
+      value: glyphicon-scissors
+      label: scissors
+    -
+      value: glyphicon-bitcoin
+      label: bitcoin
+    -
+      value: glyphicon-yen
+      label: yen
+    -
+      value: glyphicon-ruble
+      label: ruble
+    -
+      value: glyphicon-scale
+      label: scale
+    -
+      value: glyphicon-ice-lolly
+      label: ice-lolly
+    -
+      value: glyphicon-ice-lolly-tasted
+      label: ice-lolly-tasted
+    -
+      value: glyphicon-education
+      label: education
+    -
+      value: glyphicon-option-horizontal
+      label: option-horizontal
+    -
+      value: glyphicon-option-vertical
+      label: option-vertical
+    -
+      value: glyphicon-menu-hamburger
+      label: menu-hamburger
+    -
+      value: glyphicon-modal-window
+      label: modal-window
+    -
+      value: glyphicon-oil
+      label: oil
+    -
+      value: glyphicon-grain
+      label: grain
+    -
+      value: glyphicon-sunglasses
+      label: sunglasses
+    -
+      value: glyphicon-text-size
+      label: text-size
+    -
+      value: glyphicon-text-color
+      label: text-color
+    -
+      value: glyphicon-text-background
+      label: text-background
+    -
+      value: glyphicon-object-align-top
+      label: object-align-top
+    -
+      value: glyphicon-object-align-bottom
+      label: object-align-bottom
+    -
+      value: glyphicon-object-align-horizontal
+      label: object-align-horizontal
+    -
+      value: glyphicon-object-align-left
+      label: object-align-left
+    -
+      value: glyphicon-object-align-vertical
+      label: object-align-vertical
+    -
+      value: glyphicon-object-align-right
+      label: object-align-right
+    -
+      value: glyphicon-triangle-right
+      label: triangle-right
+    -
+      value: glyphicon-triangle-left
+      label: triangle-left
+    -
+      value: glyphicon-triangle-bottom
+      label: triangle-bottom
+    -
+      value: glyphicon-triangle-top
+      label: triangle-top
+    -
+      value: glyphicon-console
+      label: console
+    -
+      value: glyphicon-superscript
+      label: superscript
+    -
+      value: glyphicon-subscript
+      label: subscript
+    -
+      value: glyphicon-menu-left
+      label: menu-left
+    -
+      value: glyphicon-menu-right
+      label: menu-right
+    -
+      value: glyphicon-menu-down
+      label: menu-down
+    -
+      value: glyphicon-menu-up
+      label: menu-up
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

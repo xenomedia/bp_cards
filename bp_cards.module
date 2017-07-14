@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * bp_cards module file.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function bp_cards_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__bp_card' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__bp_cards' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__bp_card_section' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}

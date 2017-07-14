@@ -1,0 +1,8 @@
+{
+  "name": "xenomedia/bp_cards",
+  "type": "drupal-custom-module",
+  "description": "Drupal 8 module that creates Cards/Card Paragraphs bundles.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "require": { }
+}

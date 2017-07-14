@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_cards.bp_background
+    - field.field.paragraph.bp_cards.bp_width
+    - field.field.paragraph.bp_cards.bp_card_layout
+    - field.field.paragraph.bp_cards.bp_card_section
+    - paragraphs.paragraphs_type.bp_cards
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.bp_cards.default
+targetEntityType: paragraph
+bundle: bp_cards
+mode: default
+content:
+  bp_background:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  bp_width:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  bp_card_layout:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  bp_card_section:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  uid: true

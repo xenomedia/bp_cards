@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.bp_accent_color
+field_name: bp_accent_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: accent-color--aqua
+      label: Aqua
+    -
+      value: accent-color--blue
+      label: Blue
+    -
+      value: accent-color--green
+      label: Green
+    -
+      value: accent-color--light-blue
+      label: 'Light Blue'
+    -
+      value: accent-color--teal
+      label: Teal
+    -
+      value: accent-color--yellow
+      label: Yellow
+    -
+      value: accent-color--brand-primary
+      label: 'Brand Primary'
+    -
+      value: accent-color--brand-success
+      label: 'Brand Success'
+    -
+      value: accent-color--brand-info
+      label: 'Brand Info'
+    -
+      value: accent-color--brand-warning
+      label: 'Brand Warning'
+    -
+      value: accent-color--brand-danger
+      label: 'Brand Danger'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

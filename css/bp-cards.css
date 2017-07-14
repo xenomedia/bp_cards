@@ -1,0 +1,232 @@
+/* Cards Paragraph. */
+/* .field--paragraph--bp-card-section.html.twig */
+/* Removes Padding on Cards (Padding is on columns inside). */
+.paragraph.paragraph--type--bp-cards > .paragraph__column {
+  padding: 0;
+}
+/* Card Modifiers inside of Cards.  */
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__6-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__6-card {
+    float: left;
+    width: 16.66666667%;
+  }
+}
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__5-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__5-card {
+    float: left;
+    width: 20%;
+  }
+}
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__4-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__4-card {
+    float: left;
+    width: 25%;
+  }
+}
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__3-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__3-card {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__2-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__2-card {
+    float: left;
+    width: 50%;
+  }
+}
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__1-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__1-card {
+    float: left;
+    width: 100%;
+  }
+}
+/* Changes Background color on header on cards. */
+.paragraph--type--bp-card .panel-default > .panel-heading {
+  background-color: #a9a9a9;
+}
+.paragraph--type--bp-card:nth-child(2) .panel-default > .panel-heading {
+  background-color: #d0d0d0;
+}
+.paragraph--type--bp-card:nth-child(3) .panel-default > .panel-heading {
+  background-color: #8a8a8a;
+}
+.paragraph--type--bp-card:nth-child(4) .panel-default > .panel-heading {
+  background-color: #b5b5b5;
+}
+.paragraph--type--bp-card:nth-child(5) .panel-default > .panel-heading {
+  background-color: #949494;
+}
+/* Base card styles. */
+.card {
+  border-bottom: 5px solid #a9a9a9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card .card-header {
+  position: relative;
+}
+.card .card-header .glyphicon {
+  background-color: #fff;
+  border-radius: 50%;
+  color: #a9a9a9;
+  display: table;
+  font-size: 20px;
+  margin: 0 auto 10px;
+  padding: 15px;
+}
+.card .card-header .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+.card .card-header .card-title:after {
+  border-top: 15px solid #a9a9a9;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  bottom: -15px;
+  content: "";
+  height: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+/* Changes colors. */
+.accent-color--aqua .card {
+  border-bottom-color: #99D8DE;
+}
+.accent-color--aqua .card .card-header .glyphicon {
+  color: #99D8DE;
+}
+.accent-color--aqua .card .card-header .card-title:after {
+  border-top-color: #99D8DE;
+}
+.accent-color--blue .card {
+  border-bottom-color: #1F376a;
+}
+.accent-color--blue .card .card-header .glyphicon {
+  color: #1F376a;
+}
+.accent-color--blue .card .card-header .card-title:after {
+  border-top-color: #1F376a;
+}
+.accent-color--green .card {
+  border-bottom-color: #77BE6A;
+}
+.accent-color--green .card .card-header .glyphicon {
+  color: #77BE6A;
+}
+.accent-color--green .card .card-header .card-title:after {
+  border-top-color: #77BE6A;
+}
+.accent-color--light-blue .card {
+  border-bottom-color: #00A2E0;
+}
+.accent-color--light-blue .card .card-header .glyphicon {
+  color: #00A2E0;
+}
+.accent-color--light-blue .card .card-header .card-title:after {
+  border-top-color: #00A2E0;
+}
+.accent-color--teal .card {
+  border-bottom-color: #31ACA3;
+}
+.accent-color--teal .card .card-header .glyphicon {
+  color: #31ACA3;
+}
+.accent-color--teal .card .card-header .card-title:after {
+  border-top-color: #31ACA3;
+}
+.accent-color--yellow .card {
+  border-bottom-color: #D9DF22;
+}
+.accent-color--yellow .card .card-header .glyphicon {
+  color: #D9DF22;
+}
+.accent-color--yellow .card .card-header .card-title:after {
+  border-top-color: #D9DF22;
+}
+.accent-color--brand-primary .card {
+  border-bottom-color: #337ab7;
+}
+.accent-color--brand-primary .card .card-header .glyphicon {
+  color: #337ab7;
+}
+.accent-color--brand-primary .card .card-header .card-title:after {
+  border-top-color: #337ab7;
+}
+.accent-color--brand-success .card {
+  border-bottom-color: #5cb85c;
+}
+.accent-color--brand-success .card .card-header .glyphicon {
+  color: #5cb85c;
+}
+.accent-color--brand-success .card .card-header .card-title:after {
+  border-top-color: #5cb85c;
+}
+.accent-color--brand-info .card {
+  border-bottom-color: #5bc0de;
+}
+.accent-color--brand-info .card .card-header .glyphicon {
+  color: #5bc0de;
+}
+.accent-color--brand-info .card .card-header .card-title:after {
+  border-top-color: #5bc0de;
+}
+.accent-color--brand-warning .card {
+  border-bottom-color: #f0ad4e;
+}
+.accent-color--brand-warning .card .card-header .glyphicon {
+  color: #f0ad4e;
+}
+.accent-color--brand-warning .card .card-header .card-title:after {
+  border-top-color: #f0ad4e;
+}
+.accent-color--brand-danger .card {
+  border-bottom-color: #d9534f;
+}
+.accent-color--brand-danger .card .card-header .glyphicon {
+  color: #d9534f;
+}
+.accent-color--brand-danger .card .card-header .card-title:after {
+  border-top-color: #d9534f;
+}

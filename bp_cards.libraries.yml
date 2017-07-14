@@ -1,0 +1,5 @@
+bp-cards:
+  css:
+    component:
+      css/bp-cards.css:
+        minified: false

@@ -1,0 +1,457 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph in Bootstrap Paragraphs.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   - id: The paragraph ID.
+ *   - bundle: The type of the paragraph, for example, "image" or "text".
+ *   - authorid: The user ID of the paragraph author.
+ *   - createdtime: Formatted creation date. Preprocess functions can
+ *     reformat it by calling format_date() with the desired parameters on
+ *     $variables['paragraph']->getCreatedTime().
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ attach_library('bootstrap_paragraphs/bootstrap-paragraphs') }}
+{{ attach_library('bp_cards/bp-cards') }}
+
+{# Renders Accent color field. #}
+{# Sets class name from values in database. #}
+{% if content.field_accent_color|render %}
+  {% set layout_accent_color = content.field_accent_color['#items'].getString() %}
+  {% set layout_accent_color_classes = [
+    'accent-color--aqua' == layout_accent_color ? 'accent-color--aqua',
+    'accent-color--blue' == layout_accent_color ? 'accent-color--blue',
+    'accent-color--green' == layout_accent_color ? 'accent-color--green',
+    'accent-color--light-blue' == layout_accent_color ? 'accent-color--light-blue',
+    'accent-color--teal' == layout_accent_color ? 'accent-color--teal',
+    'accent-color--yellow' == layout_accent_color ? 'accent-color--yellow',
+    'accent-color--brand-primary' == layout_accent_color ? 'accent-color--brand-primary',
+    'accent-color--brand-success' == layout_accent_color ? 'accent-color--brand-success',
+    'accent-color--brand-info' == layout_accent_color ? 'accent-color--brand-info',
+    'accent-color--brand-warning' == layout_accent_color ? 'accent-color--brand-warning',
+    'accent-color--brand-danger' == layout_accent_color ? 'accent-color--brand-danger',
+  ]
+  %}
+{% endif %}
+
+{# Renders Icon field. #}
+{# Sets class name from values in database. #}
+{% if content.field_icon|render %}
+  {% set layout_icon = content.field_icon['#items'].getString() %}
+  {% set layout_icon_classes = [
+    'glyphicon-asterisk' == layout_icon ? 'glyphicon glyphicon-asterisk',
+    'glyphicon-plus' == layout_icon ? 'glyphicon glyphicon-plus',
+    'glyphicon-minus' == layout_icon ? 'glyphicon glyphicon-minus',
+    'glyphicon-eur' == layout_icon ? 'glyphicon glyphicon-eur',
+    'glyphicon-euro' == layout_icon ? 'glyphicon glyphicon-euro',
+    'glyphicon-cloud' == layout_icon ? 'glyphicon glyphicon-cloud',
+    'glyphicon-envelope' == layout_icon ? 'glyphicon glyphicon-envelope',
+    'glyphicon-pencil' == layout_icon ? 'glyphicon glyphicon-pencil',
+    'glyphicon-glass' == layout_icon ? 'glyphicon glyphicon-glass',
+    'glyphicon-music' == layout_icon ? 'glyphicon glyphicon-music',
+    'glyphicon-search' == layout_icon ? 'glyphicon glyphicon-search',
+    'glyphicon-heart' == layout_icon ? 'glyphicon glyphicon-heart',
+    'glyphicon-star' == layout_icon ? 'glyphicon glyphicon-star',
+    'glyphicon-star-empty' == layout_icon ? 'glyphicon glyphicon-star-empty',
+    'glyphicon-user' == layout_icon ? 'glyphicon glyphicon-user',
+    'glyphicon-film' == layout_icon ? 'glyphicon glyphicon-film',
+    'glyphicon-th-large' == layout_icon ? 'glyphicon glyphicon-th-large',
+    'glyphicon-th' == layout_icon ? 'glyphicon glyphicon-th',
+    'glyphicon-th-list' == layout_icon ? 'glyphicon glyphicon-th-list',
+    'glyphicon-ok' == layout_icon ? 'glyphicon glyphicon-ok',
+    'glyphicon-remove' == layout_icon ? 'glyphicon glyphicon-remove',
+    'glyphicon-zoom-in' == layout_icon ? 'glyphicon glyphicon-zoom-in',
+    'glyphicon-zoom-out' == layout_icon ? 'glyphicon glyphicon-zoom-out',
+    'glyphicon-off' == layout_icon ? 'glyphicon glyphicon-off',
+    'glyphicon-signal' == layout_icon ? 'glyphicon glyphicon-signal',
+    'glyphicon-cog' == layout_icon ? 'glyphicon glyphicon-cog',
+    'glyphicon-trash' == layout_icon ? 'glyphicon glyphicon-trash',
+    'glyphicon-home' == layout_icon ? 'glyphicon glyphicon-home',
+    'glyphicon-file' == layout_icon ? 'glyphicon glyphicon-file',
+    'glyphicon-time' == layout_icon ? 'glyphicon glyphicon-time',
+    'glyphicon-road' == layout_icon ? 'glyphicon glyphicon-road',
+    'glyphicon-download-alt' == layout_icon ? 'glyphicon glyphicon-download-alt',
+    'glyphicon-download' == layout_icon ? 'glyphicon glyphicon-download',
+    'glyphicon-upload' == layout_icon ? 'glyphicon glyphicon-upload',
+    'glyphicon-inbox' == layout_icon ? 'glyphicon glyphicon-inbox',
+    'glyphicon-play-circle' == layout_icon ? 'glyphicon glyphicon-play-circle',
+    'glyphicon-repeat' == layout_icon ? 'glyphicon glyphicon-repeat',
+    'glyphicon-refresh' == layout_icon ? 'glyphicon glyphicon-refresh',
+    'glyphicon-list-alt' == layout_icon ? 'glyphicon glyphicon-list-alt',
+    'glyphicon-lock' == layout_icon ? 'glyphicon glyphicon-lock',
+    'glyphicon-flag' == layout_icon ? 'glyphicon glyphicon-flag',
+    'glyphicon-headphones' == layout_icon ? 'glyphicon glyphicon-headphones',
+    'glyphicon-volume-off' == layout_icon ? 'glyphicon glyphicon-volume-off',
+    'glyphicon-volume-down' == layout_icon ? 'glyphicon glyphicon-volume-down',
+    'glyphicon-volume-up' == layout_icon ? 'glyphicon glyphicon-volume-up',
+    'glyphicon-qrcode' == layout_icon ? 'glyphicon glyphicon-qrcode',
+    'glyphicon-barcode' == layout_icon ? 'glyphicon glyphicon-barcode',
+    'glyphicon-tag' == layout_icon ? 'glyphicon glyphicon-tag',
+    'glyphicon-tags' == layout_icon ? 'glyphicon glyphicon-tags',
+    'glyphicon-book' == layout_icon ? 'glyphicon glyphicon-book',
+    'glyphicon-bookmark' == layout_icon ? 'glyphicon glyphicon-bookmark',
+    'glyphicon-print' == layout_icon ? 'glyphicon glyphicon-print',
+    'glyphicon-camera' == layout_icon ? 'glyphicon glyphicon-camera',
+    'glyphicon-font' == layout_icon ? 'glyphicon glyphicon-font',
+    'glyphicon-bold' == layout_icon ? 'glyphicon glyphicon-bold',
+    'glyphicon-italic' == layout_icon ? 'glyphicon glyphicon-italic',
+    'glyphicon-text-height' == layout_icon ? 'glyphicon glyphicon-text-height',
+    'glyphicon-text-width' == layout_icon ? 'glyphicon glyphicon-text-width',
+    'glyphicon-align-left' == layout_icon ? 'glyphicon glyphicon-align-left',
+    'glyphicon-align-center' == layout_icon ? 'glyphicon glyphicon-align-center',
+    'glyphicon-align-right' == layout_icon ? 'glyphicon glyphicon-align-right',
+    'glyphicon-align-justify' == layout_icon ? 'glyphicon glyphicon-align-justify',
+    'glyphicon-list' == layout_icon ? 'glyphicon glyphicon-list',
+    'glyphicon-indent-left' == layout_icon ? 'glyphicon glyphicon-indent-left',
+    'glyphicon-indent-right' == layout_icon ? 'glyphicon glyphicon-indent-right',
+    'glyphicon-facetime-video' == layout_icon ? 'glyphicon glyphicon-facetime-video',
+    'glyphicon-picture' == layout_icon ? 'glyphicon glyphicon-picture',
+    'glyphicon-map-marker' == layout_icon ? 'glyphicon glyphicon-map-marker',
+    'glyphicon-adjust' == layout_icon ? 'glyphicon glyphicon-adjust',
+    'glyphicon-tint' == layout_icon ? 'glyphicon glyphicon-tint',
+    'glyphicon-edit' == layout_icon ? 'glyphicon glyphicon-edit',
+    'glyphicon-share' == layout_icon ? 'glyphicon glyphicon-share',
+    'glyphicon-check' == layout_icon ? 'glyphicon glyphicon-check',
+    'glyphicon-move' == layout_icon ? 'glyphicon glyphicon-move',
+    'glyphicon-step-backward' == layout_icon ? 'glyphicon glyphicon-step-backward',
+    'glyphicon-fast-backward' == layout_icon ? 'glyphicon glyphicon-fast-backward',
+    'glyphicon-backward' == layout_icon ? 'glyphicon glyphicon-backward',
+    'glyphicon-play' == layout_icon ? 'glyphicon glyphicon-play',
+    'glyphicon-pause' == layout_icon ? 'glyphicon glyphicon-pause',
+    'glyphicon-stop' == layout_icon ? 'glyphicon glyphicon-stop',
+    'glyphicon-forward' == layout_icon ? 'glyphicon glyphicon-forward',
+    'glyphicon-fast-forward' == layout_icon ? 'glyphicon glyphicon-fast-forward',
+    'glyphicon-step-forward' == layout_icon ? 'glyphicon glyphicon-step-forward',
+    'glyphicon-eject' == layout_icon ? 'glyphicon glyphicon-eject',
+    'glyphicon-chevron-left' == layout_icon ? 'glyphicon glyphicon-chevron-left',
+    'glyphicon-chevron-right' == layout_icon ? 'glyphicon glyphicon-chevron-right',
+    'glyphicon-plus-sign' == layout_icon ? 'glyphicon glyphicon-plus-sign',
+    'glyphicon-minus-sign' == layout_icon ? 'glyphicon glyphicon-minus-sign',
+    'glyphicon-remove-sign' == layout_icon ? 'glyphicon glyphicon-remove-sign',
+    'glyphicon-ok-sign' == layout_icon ? 'glyphicon glyphicon-ok-sign',
+    'glyphicon-question-sign' == layout_icon ? 'glyphicon glyphicon-question-sign',
+    'glyphicon-info-sign' == layout_icon ? 'glyphicon glyphicon-info-sign',
+    'glyphicon-screenshot' == layout_icon ? 'glyphicon glyphicon-screenshot',
+    'glyphicon-remove-circle' == layout_icon ? 'glyphicon glyphicon-remove-circle',
+    'glyphicon-ok-circle' == layout_icon ? 'glyphicon glyphicon-ok-circle',
+    'glyphicon-ban-circle' == layout_icon ? 'glyphicon glyphicon-ban-circle',
+    'glyphicon-arrow-left' == layout_icon ? 'glyphicon glyphicon-arrow-left',
+    'glyphicon-arrow-right' == layout_icon ? 'glyphicon glyphicon-arrow-right',
+    'glyphicon-arrow-up' == layout_icon ? 'glyphicon glyphicon-arrow-up',
+    'glyphicon-arrow-down' == layout_icon ? 'glyphicon glyphicon-arrow-down',
+    'glyphicon-share-alt' == layout_icon ? 'glyphicon glyphicon-share-alt',
+    'glyphicon-resize-full' == layout_icon ? 'glyphicon glyphicon-resize-full',
+    'glyphicon-resize-small' == layout_icon ? 'glyphicon glyphicon-resize-small',
+    'glyphicon-exclamation-sign' == layout_icon ? 'glyphicon glyphicon-exclamation-sign',
+    'glyphicon-gift' == layout_icon ? 'glyphicon glyphicon-gift',
+    'glyphicon-leaf' == layout_icon ? 'glyphicon glyphicon-leaf',
+    'glyphicon-fire' == layout_icon ? 'glyphicon glyphicon-fire',
+    'glyphicon-eye-open' == layout_icon ? 'glyphicon glyphicon-eye-open',
+    'glyphicon-eye-close' == layout_icon ? 'glyphicon glyphicon-eye-close',
+    'glyphicon-warning-sign' == layout_icon ? 'glyphicon glyphicon-warning-sign',
+    'glyphicon-plane' == layout_icon ? 'glyphicon glyphicon-plane',
+    'glyphicon-calendar' == layout_icon ? 'glyphicon glyphicon-calendar',
+    'glyphicon-random' == layout_icon ? 'glyphicon glyphicon-random',
+    'glyphicon-comment' == layout_icon ? 'glyphicon glyphicon-comment',
+    'glyphicon-magnet' == layout_icon ? 'glyphicon glyphicon-magnet',
+    'glyphicon-chevron-up' == layout_icon ? 'glyphicon glyphicon-chevron-up',
+    'glyphicon-chevron-down' == layout_icon ? 'glyphicon glyphicon-chevron-down',
+    'glyphicon-retweet' == layout_icon ? 'glyphicon glyphicon-retweet',
+    'glyphicon-shopping-cart' == layout_icon ? 'glyphicon glyphicon-shopping-cart',
+    'glyphicon-folder-close' == layout_icon ? 'glyphicon glyphicon-folder-close',
+    'glyphicon-folder-open' == layout_icon ? 'glyphicon glyphicon-folder-open',
+    'glyphicon-resize-vertical' == layout_icon ? 'glyphicon glyphicon-resize-vertical',
+    'glyphicon-resize-horizontal' == layout_icon ? 'glyphicon glyphicon-resize-horizontal',
+    'glyphicon-hdd' == layout_icon ? 'glyphicon glyphicon-hdd',
+    'glyphicon-bullhorn' == layout_icon ? 'glyphicon glyphicon-bullhorn',
+    'glyphicon-bell' == layout_icon ? 'glyphicon glyphicon-bell',
+    'glyphicon-certificate' == layout_icon ? 'glyphicon glyphicon-certificate',
+    'glyphicon-thumbs-up' == layout_icon ? 'glyphicon glyphicon-thumbs-up',
+    'glyphicon-thumbs-down' == layout_icon ? 'glyphicon glyphicon-thumbs-down',
+    'glyphicon-hand-right' == layout_icon ? 'glyphicon glyphicon-hand-right',
+    'glyphicon-hand-left' == layout_icon ? 'glyphicon glyphicon-hand-left',
+    'glyphicon-hand-up' == layout_icon ? 'glyphicon glyphicon-hand-up',
+    'glyphicon-hand-down' == layout_icon ? 'glyphicon glyphicon-hand-down',
+    'glyphicon-circle-arrow-right' == layout_icon ? 'glyphicon glyphicon-circle-arrow-right',
+    'glyphicon-circle-arrow-left' == layout_icon ? 'glyphicon glyphicon-circle-arrow-left',
+    'glyphicon-circle-arrow-up' == layout_icon ? 'glyphicon glyphicon-circle-arrow-up',
+    'glyphicon-circle-arrow-down' == layout_icon ? 'glyphicon glyphicon-circle-arrow-down',
+    'glyphicon-globe' == layout_icon ? 'glyphicon glyphicon-globe',
+    'glyphicon-wrench' == layout_icon ? 'glyphicon glyphicon-wrench',
+    'glyphicon-tasks' == layout_icon ? 'glyphicon glyphicon-tasks',
+    'glyphicon-filter' == layout_icon ? 'glyphicon glyphicon-filter',
+    'glyphicon-briefcase' == layout_icon ? 'glyphicon glyphicon-briefcase',
+    'glyphicon-fullscreen' == layout_icon ? 'glyphicon glyphicon-fullscreen',
+    'glyphicon-dashboard' == layout_icon ? 'glyphicon glyphicon-dashboard',
+    'glyphicon-paperclip' == layout_icon ? 'glyphicon glyphicon-paperclip',
+    'glyphicon-heart-empty' == layout_icon ? 'glyphicon glyphicon-heart-empty',
+    'glyphicon-link' == layout_icon ? 'glyphicon glyphicon-link',
+    'glyphicon-phone' == layout_icon ? 'glyphicon glyphicon-phone',
+    'glyphicon-pushpin' == layout_icon ? 'glyphicon glyphicon-pushpin',
+    'glyphicon-usd' == layout_icon ? 'glyphicon glyphicon-usd',
+    'glyphicon-gbp' == layout_icon ? 'glyphicon glyphicon-gbp',
+    'glyphicon-sort' == layout_icon ? 'glyphicon glyphicon-sort',
+    'glyphicon-sort-by-alphabet' == layout_icon ? 'glyphicon glyphicon-sort-by-alphabet',
+    'glyphicon-sort-by-alphabet-alt' == layout_icon ? 'glyphicon glyphicon-sort-by-alphabet-alt',
+    'glyphicon-sort-by-order' == layout_icon ? 'glyphicon glyphicon-sort-by-order',
+    'glyphicon-sort-by-order-alt' == layout_icon ? 'glyphicon glyphicon-sort-by-order-alt',
+    'glyphicon-sort-by-attributes' == layout_icon ? 'glyphicon glyphicon-sort-by-attributes',
+    'glyphicon-sort-by-attributes-alt' == layout_icon ? 'glyphicon glyphicon-sort-by-attributes-alt',
+    'glyphicon-unchecked' == layout_icon ? 'glyphicon glyphicon-unchecked',
+    'glyphicon-expand' == layout_icon ? 'glyphicon glyphicon-expand',
+    'glyphicon-collapse-down' == layout_icon ? 'glyphicon glyphicon-collapse-down',
+    'glyphicon-collapse-up' == layout_icon ? 'glyphicon glyphicon-collapse-up',
+    'glyphicon-log-in' == layout_icon ? 'glyphicon glyphicon-log-in',
+    'glyphicon-flash' == layout_icon ? 'glyphicon glyphicon-flash',
+    'glyphicon-log-out' == layout_icon ? 'glyphicon glyphicon-log-out',
+    'glyphicon-new-window' == layout_icon ? 'glyphicon glyphicon-new-window',
+    'glyphicon-record' == layout_icon ? 'glyphicon glyphicon-record',
+    'glyphicon-save' == layout_icon ? 'glyphicon glyphicon-save',
+    'glyphicon-open' == layout_icon ? 'glyphicon glyphicon-open',
+    'glyphicon-saved' == layout_icon ? 'glyphicon glyphicon-saved',
+    'glyphicon-import' == layout_icon ? 'glyphicon glyphicon-import',
+    'glyphicon-export' == layout_icon ? 'glyphicon glyphicon-export',
+    'glyphicon-send' == layout_icon ? 'glyphicon glyphicon-send',
+    'glyphicon-floppy-disk' == layout_icon ? 'glyphicon glyphicon-floppy-disk',
+    'glyphicon-floppy-saved' == layout_icon ? 'glyphicon glyphicon-floppy-saved',
+    'glyphicon-floppy-remove' == layout_icon ? 'glyphicon glyphicon-floppy-remove',
+    'glyphicon-floppy-save' == layout_icon ? 'glyphicon glyphicon-floppy-save',
+    'glyphicon-floppy-open' == layout_icon ? 'glyphicon glyphicon-floppy-open',
+    'glyphicon-credit-card' == layout_icon ? 'glyphicon glyphicon-credit-card',
+    'glyphicon-transfer' == layout_icon ? 'glyphicon glyphicon-transfer',
+    'glyphicon-cutlery' == layout_icon ? 'glyphicon glyphicon-cutlery',
+    'glyphicon-header' == layout_icon ? 'glyphicon glyphicon-header',
+    'glyphicon-compressed' == layout_icon ? 'glyphicon glyphicon-compressed',
+    'glyphicon-earphone' == layout_icon ? 'glyphicon glyphicon-earphone',
+    'glyphicon-phone-alt' == layout_icon ? 'glyphicon glyphicon-phone-alt',
+    'glyphicon-tower' == layout_icon ? 'glyphicon glyphicon-tower',
+    'glyphicon-stats' == layout_icon ? 'glyphicon glyphicon-stats',
+    'glyphicon-sd-video' == layout_icon ? 'glyphicon glyphicon-sd-video',
+    'glyphicon-hd-video' == layout_icon ? 'glyphicon glyphicon-hd-video',
+    'glyphicon-subtitles' == layout_icon ? 'glyphicon glyphicon-subtitles',
+    'glyphicon-sound-stereo' == layout_icon ? 'glyphicon glyphicon-sound-stereo',
+    'glyphicon-sound-dolby' == layout_icon ? 'glyphicon glyphicon-sound-dolby',
+    'glyphicon-sound-5-1' == layout_icon ? 'glyphicon glyphicon-sound-5-1',
+    'glyphicon-sound-6-1' == layout_icon ? 'glyphicon glyphicon-sound-6-1',
+    'glyphicon-sound-7-1' == layout_icon ? 'glyphicon glyphicon-sound-7-1',
+    'glyphicon-copyright-mark' == layout_icon ? 'glyphicon glyphicon-copyright-mark',
+    'glyphicon-registration-mark' == layout_icon ? 'glyphicon glyphicon-registration-mark',
+    'glyphicon-cloud-download' == layout_icon ? 'glyphicon glyphicon-cloud-download',
+    'glyphicon-cloud-upload' == layout_icon ? 'glyphicon glyphicon-cloud-upload',
+    'glyphicon-tree-conifer' == layout_icon ? 'glyphicon glyphicon-tree-conifer',
+    'glyphicon-tree-deciduous' == layout_icon ? 'glyphicon glyphicon-tree-deciduous',
+    'glyphicon-cd' == layout_icon ? 'glyphicon glyphicon-cd',
+    'glyphicon-save-file' == layout_icon ? 'glyphicon glyphicon-save-file',
+    'glyphicon-open-file' == layout_icon ? 'glyphicon glyphicon-open-file',
+    'glyphicon-level-up' == layout_icon ? 'glyphicon glyphicon-level-up',
+    'glyphicon-copy' == layout_icon ? 'glyphicon glyphicon-copy',
+    'glyphicon-paste' == layout_icon ? 'glyphicon glyphicon-paste',
+    'glyphicon-alert' == layout_icon ? 'glyphicon glyphicon-alert',
+    'glyphicon-equalizer' == layout_icon ? 'glyphicon glyphicon-equalizer',
+    'glyphicon-king' == layout_icon ? 'glyphicon glyphicon-king',
+    'glyphicon-queen' == layout_icon ? 'glyphicon glyphicon-queen',
+    'glyphicon-pawn' == layout_icon ? 'glyphicon glyphicon-pawn',
+    'glyphicon-bishop' == layout_icon ? 'glyphicon glyphicon-bishop',
+    'glyphicon-knight' == layout_icon ? 'glyphicon glyphicon-knight',
+    'glyphicon-baby-formula' == layout_icon ? 'glyphicon glyphicon-baby-formula',
+    'glyphicon-tent' == layout_icon ? 'glyphicon glyphicon-tent',
+    'glyphicon-blackboard' == layout_icon ? 'glyphicon glyphicon-blackboard',
+    'glyphicon-bed' == layout_icon ? 'glyphicon glyphicon-bed',
+    'glyphicon-apple' == layout_icon ? 'glyphicon glyphicon-apple',
+    'glyphicon-erase' == layout_icon ? 'glyphicon glyphicon-erase',
+    'glyphicon-hourglass' == layout_icon ? 'glyphicon glyphicon-hourglass',
+    'glyphicon-lamp' == layout_icon ? 'glyphicon glyphicon-lamp',
+    'glyphicon-duplicate' == layout_icon ? 'glyphicon glyphicon-duplicate',
+    'glyphicon-piggy-bank' == layout_icon ? 'glyphicon glyphicon-piggy-bank',
+    'glyphicon-scissors' == layout_icon ? 'glyphicon glyphicon-scissors',
+    'glyphicon-bitcoin' == layout_icon ? 'glyphicon glyphicon-bitcoin',
+    'glyphicon-yen' == layout_icon ? 'glyphicon glyphicon-yen',
+    'glyphicon-ruble' == layout_icon ? 'glyphicon glyphicon-ruble',
+    'glyphicon-scale' == layout_icon ? 'glyphicon glyphicon-scale',
+    'glyphicon-ice-lolly' == layout_icon ? 'glyphicon glyphicon-ice-lolly',
+    'glyphicon-ice-lolly-tasted' == layout_icon ? 'glyphicon glyphicon-ice-lolly-tasted',
+    'glyphicon-education' == layout_icon ? 'glyphicon glyphicon-education',
+    'glyphicon-option-horizontal' == layout_icon ? 'glyphicon glyphicon-option-horizontal',
+    'glyphicon-option-vertical' == layout_icon ? 'glyphicon glyphicon-option-vertical',
+    'glyphicon-menu-hamburger' == layout_icon ? 'glyphicon glyphicon-menu-hamburger',
+    'glyphicon-modal-window' == layout_icon ? 'glyphicon glyphicon-modal-window',
+    'glyphicon-oil' == layout_icon ? 'glyphicon glyphicon-oil',
+    'glyphicon-grain' == layout_icon ? 'glyphicon glyphicon-grain',
+    'glyphicon-sunglasses' == layout_icon ? 'glyphicon glyphicon-sunglasses',
+    'glyphicon-text-size' == layout_icon ? 'glyphicon glyphicon-text-size',
+    'glyphicon-text-color' == layout_icon ? 'glyphicon glyphicon-text-color',
+    'glyphicon-text-background' == layout_icon ? 'glyphicon glyphicon-text-background',
+    'glyphicon-object-align-top' == layout_icon ? 'glyphicon glyphicon-object-align-top',
+    'glyphicon-object-align-bottom' == layout_icon ? 'glyphicon glyphicon-object-align-bottom',
+    'glyphicon-object-align-horizontal' == layout_icon ? 'glyphicon glyphicon-object-align-horizontal',
+    'glyphicon-object-align-left' == layout_icon ? 'glyphicon glyphicon-object-align-left',
+    'glyphicon-object-align-vertical' == layout_icon ? 'glyphicon glyphicon-object-align-vertical',
+    'glyphicon-object-align-right' == layout_icon ? 'glyphicon glyphicon-object-align-right',
+    'glyphicon-triangle-right' == layout_icon ? 'glyphicon glyphicon-triangle-right',
+    'glyphicon-triangle-left' == layout_icon ? 'glyphicon glyphicon-triangle-left',
+    'glyphicon-triangle-bottom' == layout_icon ? 'glyphicon glyphicon-triangle-bottom',
+    'glyphicon-triangle-top' == layout_icon ? 'glyphicon glyphicon-triangle-top',
+    'glyphicon-console' == layout_icon ? 'glyphicon glyphicon-console',
+    'glyphicon-superscript' == layout_icon ? 'glyphicon glyphicon-superscript',
+    'glyphicon-subscript' == layout_icon ? 'glyphicon glyphicon-subscript',
+    'glyphicon-menu-left' == layout_icon ? 'glyphicon glyphicon-menu-left',
+    'glyphicon-menu-right' == layout_icon ? 'glyphicon glyphicon-menu-right',
+    'glyphicon-menu-down' == layout_icon ? 'glyphicon glyphicon-menu-down',
+    'glyphicon-menu-up' == layout_icon ? 'glyphicon glyphicon-menu-up',
+  ]
+  %}
+{% endif %}
+
+{# Renders Width field. #}
+{# Sets class name from values in database. #}
+{% if content.bp_width|render %}
+  {% set layout_width = content.bp_width['#items'].getString() %}
+  {% set layout_width_classes = [
+    'paragraph--width--tiny' == layout_width ? 'paragraph--width--tiny',
+    'paragraph--width--narrow' == layout_width ? 'paragraph--width--narrow',
+    'paragraph--width--medium' == layout_width ? 'paragraph--width--medium',
+    'paragraph--width--wide' == layout_width ? 'paragraph--width--wide',
+    'paragraph--width--full' == layout_width ? 'paragraph--width--full',
+  ]
+  %}
+{% endif %}
+
+{# Renders Background field. #}
+{# Sets class name from values in database. #}
+{% if content.bp_background|render %}
+  {% set layout_background = content.bp_background['#items'].getString() %}
+  {% set layout_background_classes = [
+    'paragraph--color paragraph--color--rgba-black-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-black-slight',
+    'paragraph--color paragraph--color--rgba-black-light' == layout_background ? 'paragraph--color paragraph--color--rgba-black-light',
+    'paragraph--color paragraph--color--rgba-black-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-black-strong',
+    'paragraph--color paragraph--color--rgba-blue-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-black-strong',
+    'paragraph--color paragraph--color--rgba-blue-light' == layout_background ? 'paragraph--color paragraph--color--rgba-blue-light',
+    'paragraph--color paragraph--color--rgba-blue-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-blue-strong',
+    'paragraph--color paragraph--color--rgba-bluegrey-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-bluegrey-slight',
+    'paragraph--color paragraph--color--rgba-bluegrey-light' == layout_background ? 'paragraph--color paragraph--color--rgba-bluegrey-light',
+    'paragraph--color paragraph--color--rgba-bluegrey-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-bluegrey-strong',
+    'paragraph--color paragraph--color--rgba-brown-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-brown-slight',
+    'paragraph--color paragraph--color--rgba-brown-light' == layout_background ? 'paragraph--color paragraph--color--rgba-brown-light',
+    'paragraph--color paragraph--color--rgba-brown-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-brown-strong',
+    'paragraph--color paragraph--color--rgba-cyan-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-cyan-slight',
+    'paragraph--color paragraph--color--rgba-cyan-light' == layout_background ? 'paragraph--color paragraph--color--rgba-cyan-light',
+    'paragraph--color paragraph--color--rgba-cyan-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-cyan-strong',
+    'paragraph--color paragraph--color--rgba-green-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-green-slight',
+    'paragraph--color paragraph--color--rgba-green-light' == layout_background ? 'paragraph--color paragraph--color--rgba-green-light',
+    'paragraph--color paragraph--color--rgba-green-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-green-strong',
+    'paragraph--color paragraph--color--rgba-grey-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-grey-slight',
+    'paragraph--color paragraph--color--rgba-grey-light' == layout_background ? 'paragraph--color paragraph--color--rgba-grey-light',
+    'paragraph--color paragraph--color--rgba-grey-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-grey-strong',
+    'paragraph--color paragraph--color--rgba-indigo-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-indigo-slight',
+    'paragraph--color paragraph--color--rgba-indigo-light' == layout_background ? 'paragraph--color paragraph--color--rgba-indigo-light',
+    'paragraph--color paragraph--color--rgba-indigo-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-indigo-strong',
+    'paragraph--color paragraph--color--rgba-lime-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-lime-slight',
+    'paragraph--color paragraph--color--rgba-lime-light' == layout_background ? 'paragraph--color paragraph--color--rgba-lime-light',
+    'paragraph--color paragraph--color--rgba-lime-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-lime-strong',
+    'paragraph--color paragraph--color--rgba-orange-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-orange-slight',
+    'paragraph--color paragraph--color--rgba-orange-light' == layout_background ? 'paragraph--color paragraph--color--rgba-orange-light',
+    'paragraph--color paragraph--color--rgba-orange-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-orange-strong',
+    'paragraph--color paragraph--color--rgba-pink-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-pink-slight',
+    'paragraph--color paragraph--color--rgba-pink-light' == layout_background ? 'paragraph--color paragraph--color--rgba-pink-light',
+    'paragraph--color paragraph--color--rgba-pink-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-pink-strong',
+    'paragraph--color paragraph--color--rgba-purple-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-purple-slight',
+    'paragraph--color paragraph--color--rgba-purple-light' == layout_background ? 'paragraph--color paragraph--color--rgba-purple-light',
+    'paragraph--color paragraph--color--rgba-purple-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-purple-strong',
+    'paragraph--color paragraph--color--rgba-red-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-red-slight',
+    'paragraph--color paragraph--color--rgba-red-light' == layout_background ? 'paragraph--color paragraph--color--rgba-red-light',
+    'paragraph--color paragraph--color--rgba-red-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-red-strong',
+    'paragraph--color paragraph--color--rgba-stylish-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-stylish-slight',
+    'paragraph--color paragraph--color--rgba-stylish-light' == layout_background ? 'paragraph--color paragraph--color--rgba-stylish-light',
+    'paragraph--color paragraph--color--rgba-stylish-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-stylish-strong',
+    'paragraph--color paragraph--color--rgba-teal-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-teal-slight',
+    'paragraph--color paragraph--color--rgba-teal-light' == layout_background ? 'paragraph--color paragraph--color--rgba-teal-light',
+    'paragraph--color paragraph--color--rgba-teal-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-teal-strong',
+    'paragraph--color paragraph--color--rgba-white-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-white-slight',
+    'paragraph--color paragraph--color--rgba-white-light' == layout_background ? 'paragraph--color paragraph--color--rgba-white-light',
+    'paragraph--color paragraph--color--rgba-white-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-white-strong',
+    'paragraph--color paragraph--color--rgba-yellow-slight' == layout_background ? 'paragraph--color paragraph--color--rgba-yellow-slight',
+    'paragraph--color paragraph--color--rgba-yellow-light' == layout_background ? 'paragraph--color paragraph--color--rgba-yellow-light',
+    'paragraph--color paragraph--color--rgba-yellow-strong' == layout_background ? 'paragraph--color paragraph--color--rgba-yellow-strong',
+    'paragraph--color--transparent' == layout_background ? 'paragraph--color--transparent',
+    'paragraph--color paragraph--color--primary' == layout_background ? 'paragraph--color paragraph--color--primary',
+    'paragraph--color paragraph--color--secondary' == layout_background ? 'paragraph--color paragraph--color--secondary',
+    'paragraph--color paragraph--color--success' == layout_background ? 'paragraph--color paragraph--color--success',
+    'paragraph--color paragraph--color--info' == layout_background ? 'paragraph--color paragraph--color--info',
+    'paragraph--color paragraph--color--warning' == layout_background ? 'paragraph--color paragraph--color--warning',
+    'paragraph--color paragraph--color--danger' == layout_background ? 'paragraph--color paragraph--color--danger',
+  ]
+  %}
+{% endif %}
+
+{# The template default set classes. #}
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+
+{# Merges Accent color field with classes. #}
+{% set accent_color_field = content.field_accent_color|render %}
+{% if accent_color_field %}
+  {% set classes = classes|merge(layout_accent_color_classes) %}
+{% endif %}
+
+{# Merges Width field with classes. #}
+{% set width_field = content.bp_width|render %}
+{% if width_field %}
+  {% set classes = classes|merge(layout_width_classes) %}
+{% endif %}
+
+{# Merges Background field with classes. #}
+{% set background_field = content.bp_background|render %}
+{% if background_field %}
+  {% set classes = classes|merge(layout_background_classes) %}
+{% endif %}
+
+{# Prints div with classes, and content without Width, BG, Accent, and Icon. #}
+<div{{ attributes.addClass(classes) }}>
+  <div class="paragraph__column">
+    <div class="card card-default panel panel-default">
+      <div class="card-header panel-heading">
+        {% if layout_icon_classes %}
+          <span class="{{ layout_icon_classes|join(' ') }}"></span>
+        {% endif %}
+        {{ title_suffix }}
+        <div class="card-title panel-title">
+          {{ content.field_card_title }}
+        </div>
+      </div>
+      <div class="card-block panel-body">
+        {{ content|without('bp_width', 'bp_background', 'field_accent_color', 'field_icon', 'field_card_title') }}
+      </div>
+    </div>
+  </div>
+</div>

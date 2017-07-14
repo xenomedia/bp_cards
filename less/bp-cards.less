@@ -1,0 +1,356 @@
+/* -----------------------------------------------------------------------------
+
+  Bootstrap 3 Variables and Mixins Needed
+  Can be quickly compiled to CSS at http://less2css.org/
+
+----------------------------------------------------------------------------- */
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width: 30px;
+
+@jumbotron-padding: 30px;
+
+// Creates a wrapper for a series of columns
+.make-row(@gutter: @grid-gutter-width) {
+  margin-left: ceil((@gutter / -2));
+  margin-right: floor((@gutter / -2));
+  &:extend(.clearfix all);
+}
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Small screen / tablet
+//** Deprecated `@screen-sm` as of v3.0.1
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+//** Deprecated `@screen-tablet` as of v3.0.1
+@screen-tablet: @screen-sm-min;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns: 12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width: 30px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+@grid-float-breakpoint: @screen-sm-min;
+//** Point at which the navbar begins collapsing.
+@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
+
+// Generate the small columns
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left: (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  @media (min-width: @screen-sm-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-offset(@columns) {
+  @media (min-width: @screen-sm-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-push(@columns) {
+  @media (min-width: @screen-sm-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-pull(@columns) {
+  @media (min-width: @screen-sm-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+/* Colors. */
+@blue: #1F376a;
+@light-blue: #00A2E0;
+@aqua: #99D8DE;
+@yellow: #D9DF22;
+@green: #77BE6A;
+@teal: #31ACA3;
+
+/* Cards Paragraph. */
+/* .field--paragraph--bp-card-section.html.twig */
+/* Removes Padding on Cards (Padding is on columns inside). */
+.paragraph.paragraph--type--bp-cards > .paragraph__column {
+  padding: 0;
+}
+
+/* Card Modifiers inside of Cards.  */
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__6-card {
+  .make-sm-column(2);
+}
+
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__5-card {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: 768px) {
+    float: left;
+    width: 20%;
+  }
+}
+
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__4-card {
+  .make-sm-column(3);
+}
+
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__3-card {
+  .make-sm-column(4);
+}
+
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__2-card {
+  .make-sm-column(6);
+}
+
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__1-card {
+  .make-sm-column(12);
+}
+
+/* Changes Background color on header on cards. */
+.paragraph--type--bp-card {
+  .panel-default {
+    > .panel-heading {
+      background-color: #a9a9a9;
+    }
+  }
+
+  &:nth-child(2) {
+    .panel-default {
+      > .panel-heading {
+        background-color: #d0d0d0;
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .panel-default {
+      > .panel-heading {
+        background-color: #8a8a8a;
+      }
+    }
+  }
+
+  &:nth-child(4) {
+    .panel-default {
+      > .panel-heading {
+        background-color: #b5b5b5;
+      }
+    }
+  }
+
+  &:nth-child(5) {
+    .panel-default {
+      > .panel-heading {
+        background-color: #949494;
+      }
+    }
+  }
+}
+
+/* Base card styles. */
+.card {
+  border-bottom: 5px solid #a9a9a9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  .card-header {
+    position: relative;
+
+    .glyphicon {
+      background-color: #fff;
+      border-radius: 50%;
+      color: #a9a9a9;
+      display: table;
+      font-size: 20px;
+      margin: 0 auto 10px;
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+
+      &:after {
+        border-top: 15px solid #a9a9a9;
+        border-right: 15px solid transparent;
+        border-left: 15px solid transparent;
+        bottom: -15px;
+        content: "";
+        height: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        width: 0;
+      }
+    }
+  }
+}
+
+/* Changes colors. */
+.accent-color--aqua {
+  .card {
+    border-bottom-color: @aqua;
+    .card-header {
+      .glyphicon {
+        color: @aqua;
+      }
+      .card-title:after {
+        border-top-color: @aqua;
+      }
+    }
+  }
+}
+
+.accent-color--blue {
+  .card {
+    border-bottom-color: @blue;
+    .card-header {
+      .glyphicon {
+        color: @blue;
+      }
+      .card-title:after {
+        border-top-color: @blue;
+      }
+    }
+  }
+}
+
+.accent-color--green {
+  .card {
+    border-bottom-color: @green;
+    .card-header {
+      .glyphicon {
+        color: @green;
+      }
+      .card-title:after {
+        border-top-color: @green;
+      }
+    }
+  }
+}
+
+.accent-color--light-blue {
+  .card {
+    border-bottom-color: @light-blue;
+    .card-header {
+      .glyphicon {
+        color: @light-blue;
+      }
+      .card-title:after {
+        border-top-color: @light-blue;
+      }
+    }
+  }
+}
+
+.accent-color--teal {
+  .card {
+    border-bottom-color: @teal;
+    .card-header {
+      .glyphicon {
+        color: @teal;
+      }
+      .card-title:after {
+        border-top-color: @teal;
+      }
+    }
+  }
+}
+
+.accent-color--yellow {
+  .card {
+    border-bottom-color: @yellow;
+    .card-header {
+      .glyphicon {
+        color: @yellow;
+      }
+      .card-title:after {
+        border-top-color: @yellow;
+      }
+    }
+  }
+}
+
+.accent-color--brand-primary {
+  .card {
+    border-bottom-color: #337ab7;
+    .card-header {
+      .glyphicon {
+        color: #337ab7;
+      }
+      .card-title:after {
+        border-top-color: #337ab7;
+      }
+    }
+  }
+}
+
+.accent-color--brand-success {
+  .card {
+    border-bottom-color: #5cb85c;
+    .card-header {
+      .glyphicon {
+        color: #5cb85c;
+      }
+      .card-title:after {
+        border-top-color: #5cb85c;
+      }
+    }
+  }
+}
+
+.accent-color--brand-info {
+  .card {
+    border-bottom-color: #5bc0de;
+    .card-header {
+      .glyphicon {
+        color: #5bc0de;
+      }
+      .card-title:after {
+        border-top-color: #5bc0de;
+      }
+    }
+  }
+}
+
+.accent-color--brand-warning {
+  .card {
+    border-bottom-color: #f0ad4e;
+    .card-header {
+      .glyphicon {
+        color: #f0ad4e;
+      }
+      .card-title:after {
+        border-top-color: #f0ad4e;
+      }
+    }
+  }
+}
+
+.accent-color--brand-danger {
+  .card {
+    border-bottom-color: #d9534f;
+    .card-header {
+      .glyphicon {
+        color: #d9534f;
+      }
+      .card-title:after {
+        border-top-color: #d9534f;
+      }
+    }
+  }
+}
