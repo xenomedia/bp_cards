@@ -5,74 +5,74 @@
   padding: 0;
 }
 /* Card Modifiers inside of Cards.  */
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__6-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__6-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__6-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__6-cards {
     float: left;
     width: 16.66666667%;
   }
 }
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__5-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__5-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
     float: left;
     width: 20%;
   }
 }
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__4-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__4-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__4-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__4-cards {
     float: left;
     width: 25%;
   }
 }
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__3-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__3-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__3-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__3-cards {
     float: left;
     width: 33.33333333%;
   }
 }
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__2-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__2-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__2-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__2-cards {
     float: left;
     width: 50%;
   }
 }
-.paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__1-card {
+.paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__1-cards {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-card__1-card {
+  .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__1-cards {
     float: left;
     width: 100%;
   }
