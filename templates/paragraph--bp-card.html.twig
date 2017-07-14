@@ -42,8 +42,8 @@
 
 {# Renders Accent color field. #}
 {# Sets class name from values in database. #}
-{% if content.field_accent_color|render %}
-  {% set layout_accent_color = content.field_accent_color['#items'].getString() %}
+{% if content.bp_accent_color|render %}
+  {% set layout_accent_color = content.bp_accent_color['#items'].getString() %}
   {% set layout_accent_color_classes = [
     'accent-color--aqua' == layout_accent_color ? 'accent-color--aqua',
     'accent-color--blue' == layout_accent_color ? 'accent-color--blue',
@@ -62,8 +62,8 @@
 
 {# Renders Icon field. #}
 {# Sets class name from values in database. #}
-{% if content.field_icon|render %}
-  {% set layout_icon = content.field_icon['#items'].getString() %}
+{% if content.bp_icon|render %}
+  {% set layout_icon = content.bp_icon['#items'].getString() %}
   {% set layout_icon_classes = [
     'glyphicon-asterisk' == layout_icon ? 'glyphicon glyphicon-asterisk',
     'glyphicon-plus' == layout_icon ? 'glyphicon glyphicon-plus',
@@ -419,7 +419,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 
 {# Merges Accent color field with classes. #}
-{% set accent_color_field = content.field_accent_color|render %}
+{% set accent_color_field = content.bp_accent_color|render %}
 {% if accent_color_field %}
   {% set classes = classes|merge(layout_accent_color_classes) %}
 {% endif %}
@@ -446,11 +446,11 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
         {% endif %}
         {{ title_suffix }}
         <div class="card-title panel-title">
-          {{ content.field_card_title }}
+          {{ content.bp_card_title }}
         </div>
       </div>
       <div class="card-block panel-body">
-        {{ content|without('bp_width', 'bp_background', 'field_accent_color', 'field_icon', 'field_card_title') }}
+        {{ content|without('bp_width', 'bp_background', 'bp_accent_color', 'bp_icon', 'bp_card_title') }}
       </div>
     </div>
   </div>

@@ -42,8 +42,8 @@
 
 {# Renders Card Layout field. #}
 {# Sets class name from values in database. #}
-{% if content.field_card_layout|render %}
-  {% set layout_card_layout = content.field_card_layout['#items'].getString() %}
+{% if content.bp_card_layout|render %}
+  {% set layout_card_layout = content.bp_card_layout['#items'].getString() %}
   {% set layout_card_layout_classes = [
     'card-group' == layout_card_layout ? 'card-group',
     'card-deck' == layout_card_layout ? 'card-deck',
@@ -143,7 +143,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 %}
 
 {# Merges Card Layout field with classes. #}
-{% set card_layout_field = content.field_card_layout|render %}
+{% set card_layout_field = content.bp_card_layout|render %}
 {% if card_layout_field %}
   {% set classes = classes|merge(layout_card_layout_classes) %}
 {% endif %}
@@ -164,6 +164,6 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
   <div class="paragraph__column">
     {{ title_suffix }}
-    {{ content|without('bp_width', 'bp_background', 'field_card_layout') }}
+    {{ content|without('bp_width', 'bp_background', 'bp_card_layout') }}
   </div>
 </div>
