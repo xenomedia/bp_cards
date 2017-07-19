@@ -94,15 +94,17 @@
   background-color: #949494;
 }
 /* Base card styles. */
-.card {
+.card.panel {
+  border: none;
   border-bottom: 5px solid #a9a9a9;
+  border-radius: 4px 0 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.card .card-header {
+.card.panel .card-header {
   position: relative;
 }
-.card .card-header .glyphicon {
+.card.panel .card-header .glyphicon {
   background-color: #fff;
   border-radius: 50%;
   color: #a9a9a9;
@@ -111,13 +113,13 @@
   margin: 0 auto 10px;
   padding: 15px;
 }
-.card .card-header .card-title {
+.card.panel .card-header .card-title {
   font-size: 20px;
   font-weight: 600;
   color: #fff;
   text-align: center;
 }
-.card .card-header .card-title:after {
+.card.panel .card-header .card-title:after {
   border-top: 15px solid #a9a9a9;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
@@ -130,144 +132,149 @@
   right: 0;
   width: 0;
 }
-.card ul {
-  list-style-type: none;
+.card.panel .card-block.panel-body {
+  padding: 30px 15px 15px;
 }
-.card ul li:before {
+.card.panel ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+.card.panel ul li:before {
   color: #a9a9a9;
   content: "▶";
+  margin-bottom: 5px;
   padding-right: 10px;
 }
 /* Changes colors. */
-.accent-color--aqua .card {
+.accent-color--aqua .card.panel {
   border-bottom-color: #99D8DE;
 }
-.accent-color--aqua .card .card-header .glyphicon {
+.accent-color--aqua .card.panel .card-header .glyphicon {
   color: #99D8DE;
 }
-.accent-color--aqua .card .card-header .card-title:after {
+.accent-color--aqua .card.panel .card-header .card-title:after {
   border-top-color: #99D8DE;
 }
-.accent-color--aqua .card ul li:before {
+.accent-color--aqua .card.panel ul li:before {
   color: #99D8DE;
 }
-.accent-color--blue .card {
+.accent-color--blue .card.panel {
   border-bottom-color: #1F376a;
 }
-.accent-color--blue .card .card-header .glyphicon {
+.accent-color--blue .card.panel .card-header .glyphicon {
   color: #1F376a;
 }
-.accent-color--blue .card .card-header .card-title:after {
+.accent-color--blue .card.panel .card-header .card-title:after {
   border-top-color: #1F376a;
 }
-.accent-color--blue .card ul li:before {
+.accent-color--blue .card.panel ul li:before {
   color: #1F376a;
 }
-.accent-color--green .card {
+.accent-color--green .card.panel {
   border-bottom-color: #77BE6A;
 }
-.accent-color--green .card .card-header .glyphicon {
+.accent-color--green .card.panel .card-header .glyphicon {
   color: #77BE6A;
 }
-.accent-color--green .card .card-header .card-title:after {
+.accent-color--green .card.panel .card-header .card-title:after {
   border-top-color: #77BE6A;
 }
-.accent-color--green .card ul li:before {
+.accent-color--green .card.panel ul li:before {
   color: #77BE6A;
 }
-.accent-color--light-blue .card {
+.accent-color--light-blue .card.panel {
   border-bottom-color: #00A2E0;
 }
-.accent-color--light-blue .card .card-header .glyphicon {
+.accent-color--light-blue .card.panel .card-header .glyphicon {
   color: #00A2E0;
 }
-.accent-color--light-blue .card .card-header .card-title:after {
+.accent-color--light-blue .card.panel .card-header .card-title:after {
   border-top-color: #00A2E0;
 }
-.accent-color--light-blue .card ul li:before {
+.accent-color--light-blue .card.panel ul li:before {
   color: #00A2E0;
 }
-.accent-color--teal .card {
+.accent-color--teal .card.panel {
   border-bottom-color: #31ACA3;
 }
-.accent-color--teal .card .card-header .glyphicon {
+.accent-color--teal .card.panel .card-header .glyphicon {
   color: #31ACA3;
 }
-.accent-color--teal .card .card-header .card-title:after {
+.accent-color--teal .card.panel .card-header .card-title:after {
   border-top-color: #31ACA3;
 }
-.accent-color--teal .card ul li:before {
+.accent-color--teal .card.panel ul li:before {
   color: #31ACA3;
 }
-.accent-color--yellow .card {
+.accent-color--yellow .card.panel {
   border-bottom-color: #D9DF22;
 }
-.accent-color--yellow .card .card-header .glyphicon {
+.accent-color--yellow .card.panel .card-header .glyphicon {
   color: #D9DF22;
 }
-.accent-color--yellow .card .card-header .card-title:after {
+.accent-color--yellow .card.panel .card-header .card-title:after {
   border-top-color: #D9DF22;
 }
-.accent-color--yellow .card ul li:before {
+.accent-color--yellow .card.panel ul li:before {
   color: #D9DF22;
 }
-.accent-color--brand-primary .card {
+.accent-color--brand-primary .card.panel {
   border-bottom-color: #337ab7;
 }
-.accent-color--brand-primary .card .card-header .glyphicon {
+.accent-color--brand-primary .card.panel .card-header .glyphicon {
   color: #337ab7;
 }
-.accent-color--brand-primary .card .card-header .card-title:after {
+.accent-color--brand-primary .card.panel .card-header .card-title:after {
   border-top-color: #337ab7;
 }
-.accent-color--brand-primary .card ul li:before {
+.accent-color--brand-primary .card.panel ul li:before {
   color: #337ab7;
 }
-.accent-color--brand-success .card {
+.accent-color--brand-success .card.panel {
   border-bottom-color: #5cb85c;
 }
-.accent-color--brand-success .card .card-header .glyphicon {
+.accent-color--brand-success .card.panel .card-header .glyphicon {
   color: #5cb85c;
 }
-.accent-color--brand-success .card .card-header .card-title:after {
+.accent-color--brand-success .card.panel .card-header .card-title:after {
   border-top-color: #5cb85c;
 }
-.accent-color--brand-success .card ul li:before {
+.accent-color--brand-success .card.panel ul li:before {
   color: #5cb85c;
 }
-.accent-color--brand-info .card {
+.accent-color--brand-info .card.panel {
   border-bottom-color: #5bc0de;
 }
-.accent-color--brand-info .card .card-header .glyphicon {
+.accent-color--brand-info .card.panel .card-header .glyphicon {
   color: #5bc0de;
 }
-.accent-color--brand-info .card .card-header .card-title:after {
+.accent-color--brand-info .card.panel .card-header .card-title:after {
   border-top-color: #5bc0de;
 }
-.accent-color--brand-info .card ul li:before {
+.accent-color--brand-info .card.panel ul li:before {
   color: #5bc0de;
 }
-.accent-color--brand-warning .card {
+.accent-color--brand-warning .card.panel {
   border-bottom-color: #f0ad4e;
 }
-.accent-color--brand-warning .card .card-header .glyphicon {
+.accent-color--brand-warning .card.panel .card-header .glyphicon {
   color: #f0ad4e;
 }
-.accent-color--brand-warning .card .card-header .card-title:after {
+.accent-color--brand-warning .card.panel .card-header .card-title:after {
   border-top-color: #f0ad4e;
 }
-.accent-color--brand-warning .card ul li:before {
+.accent-color--brand-warning .card.panel ul li:before {
   color: #f0ad4e;
 }
-.accent-color--brand-danger .card {
+.accent-color--brand-danger .card.panel {
   border-bottom-color: #d9534f;
 }
-.accent-color--brand-danger .card .card-header .glyphicon {
+.accent-color--brand-danger .card.panel .card-header .glyphicon {
   color: #d9534f;
 }
-.accent-color--brand-danger .card .card-header .card-title:after {
+.accent-color--brand-danger .card.panel .card-header .card-title:after {
   border-top-color: #d9534f;
 }
-.accent-color--brand-danger .card ul li:before {
+.accent-color--brand-danger .card.panel ul li:before {
   color: #d9534f;
 }

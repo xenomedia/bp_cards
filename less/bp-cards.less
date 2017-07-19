@@ -159,8 +159,10 @@
 }
 
 /* Base card styles. */
-.card {
+.card.panel {
+  border: none;
   border-bottom: 5px solid #a9a9a9;
+  border-radius: 4px 0 0;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
@@ -198,12 +200,19 @@
       }
     }
   }
+
+  .card-block.panel-body {
+    padding: 30px 15px 15px
+  }
+
   ul {
     list-style-type: none;
+    padding-left: 15px;
 
     li:before {
       color: #a9a9a9;
       content: "▶";
+      margin-bottom: 5px;
       padding-right: 10px;
     }
   }
@@ -211,7 +220,7 @@
 
 /* Changes colors. */
 .accent-color--aqua {
-  .card {
+  .card.panel {
     border-bottom-color: @aqua;
     .card-header {
       .glyphicon {
@@ -230,7 +239,7 @@
 }
 
 .accent-color--blue {
-  .card {
+  .card.panel {
     border-bottom-color: @blue;
     .card-header {
       .glyphicon {
@@ -249,7 +258,7 @@
 }
 
 .accent-color--green {
-  .card {
+  .card.panel {
     border-bottom-color: @green;
     .card-header {
       .glyphicon {
@@ -268,7 +277,7 @@
 }
 
 .accent-color--light-blue {
-  .card {
+  .card.panel {
     border-bottom-color: @light-blue;
     .card-header {
       .glyphicon {
@@ -287,7 +296,7 @@
 }
 
 .accent-color--teal {
-  .card {
+  .card.panel {
     border-bottom-color: @teal;
     .card-header {
       .glyphicon {
@@ -306,7 +315,7 @@
 }
 
 .accent-color--yellow {
-  .card {
+  .card.panel {
     border-bottom-color: @yellow;
     .card-header {
       .glyphicon {
@@ -325,7 +334,7 @@
 }
 
 .accent-color--brand-primary {
-  .card {
+  .card.panel {
     border-bottom-color: #337ab7;
     .card-header {
       .glyphicon {
@@ -344,7 +353,7 @@
 }
 
 .accent-color--brand-success {
-  .card {
+  .card.panel {
     border-bottom-color: #5cb85c;
     .card-header {
       .glyphicon {
@@ -363,7 +372,7 @@
 }
 
 .accent-color--brand-info {
-  .card {
+  .card.panel {
     border-bottom-color: #5bc0de;
     .card-header {
       .glyphicon {
@@ -382,7 +391,7 @@
 }
 
 .accent-color--brand-warning {
-  .card {
+  .card.panel {
     border-bottom-color: #f0ad4e;
     .card-header {
       .glyphicon {
@@ -401,7 +410,7 @@
 }
 
 .accent-color--brand-danger {
-  .card {
+  .card.panel {
     border-bottom-color: #d9534f;
     .card-header {
       .glyphicon {
