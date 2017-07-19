@@ -142,8 +142,10 @@
 .card.panel ul li:before {
   color: #a9a9a9;
   content: "▶";
-  margin-bottom: 5px;
   padding-right: 10px;
+}
+.card.panel ul li {
+  margin-bottom: 5px;
 }
 /* Changes colors. */
 .accent-color--aqua .card.panel {
