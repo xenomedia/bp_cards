@@ -116,9 +116,6 @@
   right: 0;
   width: 0;
 }
-.card.panel .paragraph--type--bp-card .panel-default > .panel-heading {
-  background-color: #898989;
-}
 .card.panel .card-block.panel-body {
   padding: 30px 15px 15px;
 }
@@ -133,6 +130,9 @@
 }
 .card.panel ul li {
   margin-bottom: 5px;
+}
+.paragraph--type--bp-card .panel-default > .panel-heading {
+  background-color: #898989;
 }
 /* Changes colors. */
 .accent-color--aqua .card.panel {
