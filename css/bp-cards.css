@@ -136,76 +136,76 @@
 }
 /* Changes colors. */
 .accent-color--aqua .card.panel {
-  border-bottom-color: #99D8DE;
+  border-bottom-color: #99d8de;
 }
 .accent-color--aqua .card.panel .card-header .glyphicon {
-  color: #99D8DE;
+  color: #99d8de;
 }
 .accent-color--aqua .card.panel .card-header .card-title:after {
-  border-top-color: #99D8DE;
+  border-top-color: #99d8de;
 }
 .accent-color--aqua .card.panel ul li:before {
-  color: #99D8DE;
+  color: #99d8de;
 }
 .accent-color--blue .card.panel {
-  border-bottom-color: #1F376a;
+  border-bottom-color: #1f376a;
 }
 .accent-color--blue .card.panel .card-header .glyphicon {
-  color: #1F376a;
+  color: #1f376a;
 }
 .accent-color--blue .card.panel .card-header .card-title:after {
-  border-top-color: #1F376a;
+  border-top-color: #1f376a;
 }
 .accent-color--blue .card.panel ul li:before {
-  color: #1F376a;
+  color: #1f376a;
 }
 .accent-color--green .card.panel {
-  border-bottom-color: #77BE6A;
+  border-bottom-color: #77be6a;
 }
 .accent-color--green .card.panel .card-header .glyphicon {
-  color: #77BE6A;
+  color: #77be6a;
 }
 .accent-color--green .card.panel .card-header .card-title:after {
-  border-top-color: #77BE6A;
+  border-top-color: #77be6a;
 }
 .accent-color--green .card.panel ul li:before {
-  color: #77BE6A;
+  color: #77be6a;
 }
 .accent-color--light-blue .card.panel {
-  border-bottom-color: #00A2E0;
+  border-bottom-color: #00a2e0;
 }
 .accent-color--light-blue .card.panel .card-header .glyphicon {
-  color: #00A2E0;
+  color: #00a2e0;
 }
 .accent-color--light-blue .card.panel .card-header .card-title:after {
-  border-top-color: #00A2E0;
+  border-top-color: #00a2e0;
 }
 .accent-color--light-blue .card.panel ul li:before {
-  color: #00A2E0;
+  color: #00a2e0;
 }
 .accent-color--teal .card.panel {
-  border-bottom-color: #31ACA3;
+  border-bottom-color: #31aca3;
 }
 .accent-color--teal .card.panel .card-header .glyphicon {
-  color: #31ACA3;
+  color: #31aca3;
 }
 .accent-color--teal .card.panel .card-header .card-title:after {
-  border-top-color: #31ACA3;
+  border-top-color: #31aca3;
 }
 .accent-color--teal .card.panel ul li:before {
-  color: #31ACA3;
+  color: #31aca3;
 }
 .accent-color--yellow .card.panel {
-  border-bottom-color: #D9DF22;
+  border-bottom-color: #d9df22;
 }
 .accent-color--yellow .card.panel .card-header .glyphicon {
-  color: #D9DF22;
+  color: #d9df22;
 }
 .accent-color--yellow .card.panel .card-header .card-title:after {
-  border-top-color: #D9DF22;
+  border-top-color: #d9df22;
 }
 .accent-color--yellow .card.panel ul li:before {
-  color: #D9DF22;
+  color: #d9df22;
 }
 .accent-color--brand-primary .card.panel {
   border-bottom-color: #337ab7;
