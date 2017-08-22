@@ -15,8 +15,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__6-cards {
@@ -27,8 +25,8 @@
 .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
   position: relative;
   min-height: 1px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
@@ -41,8 +39,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__4-cards {
@@ -55,8 +51,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__3-cards {
@@ -69,8 +63,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__2-cards {
@@ -83,8 +75,6 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-left: 0;
-  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__1-cards {
@@ -151,76 +141,76 @@
 }
 /* Changes colors. */
 .accent-color--aqua .card.panel {
-  border-bottom-color: #99d8de;
+  border-bottom-color: #99D8DE;
 }
 .accent-color--aqua .card.panel .card-header .glyphicon {
-  color: #99d8de;
+  color: #99D8DE;
 }
 .accent-color--aqua .card.panel .card-header .card-title:after {
-  border-top-color: #99d8de;
+  border-top-color: #99D8DE;
 }
 .accent-color--aqua .card.panel ul li:before {
-  color: #99d8de;
+  color: #99D8DE;
 }
 .accent-color--blue .card.panel {
-  border-bottom-color: #1f376a;
+  border-bottom-color: #1F376a;
 }
 .accent-color--blue .card.panel .card-header .glyphicon {
-  color: #1f376a;
+  color: #1F376a;
 }
 .accent-color--blue .card.panel .card-header .card-title:after {
-  border-top-color: #1f376a;
+  border-top-color: #1F376a;
 }
 .accent-color--blue .card.panel ul li:before {
-  color: #1f376a;
+  color: #1F376a;
 }
 .accent-color--green .card.panel {
-  border-bottom-color: #77be6a;
+  border-bottom-color: #77BE6A;
 }
 .accent-color--green .card.panel .card-header .glyphicon {
-  color: #77be6a;
+  color: #77BE6A;
 }
 .accent-color--green .card.panel .card-header .card-title:after {
-  border-top-color: #77be6a;
+  border-top-color: #77BE6A;
 }
 .accent-color--green .card.panel ul li:before {
-  color: #77be6a;
+  color: #77BE6A;
 }
 .accent-color--light-blue .card.panel {
-  border-bottom-color: #00a2e0;
+  border-bottom-color: #00A2E0;
 }
 .accent-color--light-blue .card.panel .card-header .glyphicon {
-  color: #00a2e0;
+  color: #00A2E0;
 }
 .accent-color--light-blue .card.panel .card-header .card-title:after {
-  border-top-color: #00a2e0;
+  border-top-color: #00A2E0;
 }
 .accent-color--light-blue .card.panel ul li:before {
-  color: #00a2e0;
+  color: #00A2E0;
 }
 .accent-color--teal .card.panel {
-  border-bottom-color: #31aca3;
+  border-bottom-color: #31ACA3;
 }
 .accent-color--teal .card.panel .card-header .glyphicon {
-  color: #31aca3;
+  color: #31ACA3;
 }
 .accent-color--teal .card.panel .card-header .card-title:after {
-  border-top-color: #31aca3;
+  border-top-color: #31ACA3;
 }
 .accent-color--teal .card.panel ul li:before {
-  color: #31aca3;
+  color: #31ACA3;
 }
 .accent-color--yellow .card.panel {
-  border-bottom-color: #d9df22;
+  border-bottom-color: #D9DF22;
 }
 .accent-color--yellow .card.panel .card-header .glyphicon {
-  color: #d9df22;
+  color: #D9DF22;
 }
 .accent-color--yellow .card.panel .card-header .card-title:after {
-  border-top-color: #d9df22;
+  border-top-color: #D9DF22;
 }
 .accent-color--yellow .card.panel ul li:before {
-  color: #d9df22;
+  color: #D9DF22;
 }
 .accent-color--brand-primary .card.panel {
   border-bottom-color: #337ab7;
