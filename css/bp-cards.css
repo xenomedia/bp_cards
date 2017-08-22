@@ -1,3 +1,8 @@
+/**
+ * @file
+ * The base css file for Bootstrap Paragraphs Cards.
+ *
+ */
 /* Cards Paragraph. */
 /* .field--paragraph--bp-card-section.html.twig */
 /* Removes Padding on Cards (Padding is on columns inside). */
@@ -10,6 +15,8 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__6-cards {
@@ -20,8 +27,8 @@
 .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__5-cards {
@@ -34,6 +41,8 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__4-cards {
@@ -46,6 +55,8 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__3-cards {
@@ -58,6 +69,8 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__2-cards {
@@ -70,6 +83,8 @@
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media (min-width: 768px) {
   .paragraph.paragraph--type--bp-cards .paragraph--type--bp-cards__1-cards {
