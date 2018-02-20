@@ -440,6 +440,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div{{ attributes.addClass(classes) }}>
   <div class="paragraph__column">
     <div class="card card-default panel panel-default">
+      {% if layout_icon_classes or content.bp_card_title|render|trim is not empty %}
       <div class="card-header panel-heading">
         {% if layout_icon_classes %}
           <span class="{{ layout_icon_classes|join(' ') }}"></span>
@@ -449,6 +450,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
           {{ content.bp_card_title }}
         </div>
       </div>
+      {% endif %}
       <div class="card-block panel-body">
         {{ content|without('bp_width', 'bp_background', 'bp_accent_color', 'bp_icon', 'bp_card_title') }}
       </div>
