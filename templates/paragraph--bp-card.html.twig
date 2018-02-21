@@ -441,15 +441,15 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   <div class="paragraph__column">
     <div class="card card-default panel panel-default">
       {% if layout_icon_classes or content.bp_card_title|render|trim is not empty %}
-      <div class="card-header panel-heading">
-        {% if layout_icon_classes %}
-          <span class="{{ layout_icon_classes|join(' ') }}"></span>
-        {% endif %}
-        {{ title_suffix }}
-        <div class="card-title panel-title">
-          {{ content.bp_card_title }}
+        <div class="card-header panel-heading">
+          {% if layout_icon_classes %}
+            <span class="{{ layout_icon_classes|join(' ') }}"></span>
+          {% endif %}
+          {{ title_suffix }}
+          <div class="card-title panel-title">
+            {{ content.bp_card_title }}
+          </div>
         </div>
-      </div>
       {% endif %}
       <div class="card-block panel-body">
         {{ content|without('bp_width', 'bp_background', 'bp_accent_color', 'bp_icon', 'bp_card_title') }}
